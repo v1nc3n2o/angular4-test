@@ -2,23 +2,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 
-//Angular material
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+// Angular material
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
-  MatButtonModule, 
-  MatCheckboxModule, 
-  MatTableModule, 
+  MatButtonModule,
+  MatCheckboxModule,
+  MatTableModule,
   MatCardModule,
   MatToolbarModule,
   MatMenuModule
 } from '@angular/material';
-import { FlexLayoutModule } from "@angular/flex-layout";
+import { FlexLayoutModule } from '@angular/flex-layout';
 
-//Components 
+// Components
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 
-//Services
+// Services
 import { UserService } from './user/user.service';
 
 @NgModule({
