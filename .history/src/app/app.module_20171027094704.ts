@@ -9,9 +9,6 @@ import { UserComponent } from './user/user.component';
 // Services
 import { UserService } from './user/user.service';
 
-// Theme
-import { MaterialModule } from './material.module';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +17,8 @@ import { MaterialModule } from './material.module';
   imports: [
     BrowserModule,
     HttpModule,
-    MaterialModule
+    BrowserAnimationsModule,
+    FlexLayoutModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

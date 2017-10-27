@@ -2,15 +2,24 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 
+// Angular material
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {
+  MatButtonModule,
+  MatCheckboxModule,
+  MatTableModule,
+  MatCardModule,
+  MatToolbarModule,
+  MatMenuModule
+} from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 // Components
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 
 // Services
 import { UserService } from './user/user.service';
-
-// Theme
-import { MaterialModule } from './material.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +29,8 @@ import { MaterialModule } from './material.module';
   imports: [
     BrowserModule,
     HttpModule,
-    MaterialModule
+    BrowserAnimationsModule,
+    FlexLayoutModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
