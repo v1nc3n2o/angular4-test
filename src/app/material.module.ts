@@ -5,7 +5,8 @@ import {
   MatTableModule,
   MatCardModule,
   MatToolbarModule,
-  MatMenuModule
+  MatMenuModule,
+  MatIconModule
 } from '@angular/material';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -19,6 +20,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatCardModule,
     MatToolbarModule,
     MatMenuModule,
+    MatIconModule,
     BrowserAnimationsModule,
     FlexLayoutModule]
 })
