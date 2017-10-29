@@ -1,0 +1,46 @@
+/* You can add global styles to this file, and also import other style files */
+
+// @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+/* @import '~@angular/material/prebuilt-themes/purple-green.css'; */
+
+
+/* @import '~@angular/material/prebuilt-themes/pink-bluegrey.css'; */
+
+@import '~@angular/material/theming';
+// @import url('~@angular/material/prebuilt-themes/indigo-pink.css');
+@import url('~https://fonts.googleapis.com/icon?family=Material+Icons');
+@include mat-core();
+// Theme one
+$my-theme1-primary: mat-palette($mat-green);
+$my-theme1-accent: mat-palette($mat-yellow);
+$my-theme1-warn: mat-palette($mat-red);
+$my-theme1: mat-light-theme( $my-theme1-primary,
+$my-theme1-accent,
+$my-theme1-warn);
+// Theme two
+$my-theme2-primary: mat-palette($mat-indigo);
+$my-theme2-accent: mat-palette($mat-pink);
+$my-theme2-warn: mat-palette($mat-red);
+$my-theme2: mat-light-theme( $my-theme2-primary,
+$my-theme2-accent,
+$my-theme2-warn);
+//----
+.my-theme-one {
+    @include angular-material-theme($my-theme1);
+}
+
+.my-theme-two {
+    @include angular-material-theme($my-theme2);
+}
+
+.fullheigth {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, sans-serif;
+    height: 100%;
+    width: 100%;
+}
