@@ -13,16 +13,12 @@ export class AppComponent implements OnInit {
 
   public ngOnInit(): void {
     this.theme = 'my-theme-one';
-    Observable.interval(1000 * 3).subscribe(x => {
-      this.doSomething();
+    Observable.interval(1000 * 3).subscribe(period => {
+      this.changeTheme(period);
     });
   }
 
-  doSomething() {
-    if (this.theme === 'my-theme-one') {
-      this.theme = 'my-theme-two';
-    } else {
-      this.theme = 'my-theme-one';
-    }
+  changeTheme(num: number) {
+    num % 2 === 0 ? this.theme = 'my-theme-two' : this.theme = 'my-theme-one';
   }
 }
