@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
 
   public ngOnInit(): void {
     this.theme = 'my-theme-one';
-    Observable.interval(1000 * 3).subscribe(period => {
+    Observable.interval(1000 * 10).subscribe(period => {
       this.changeTheme(period);
     });
   }

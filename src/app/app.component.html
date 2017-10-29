@@ -1,9 +1,14 @@
-<div [class]="theme">
-    <mat-toolbar class="mat-elevation-z6 fixed-top" color="primary">
-        <button mat-icon-button>
-            <mat-icon aria-label="Burger menu">view_headline</mat-icon>
-        </button>
-        <span>My App</span>
-    </mat-toolbar>
-    <app-user></app-user>
+<div [class]="theme" class="fullheigth">
+    <mat-sidenav-container class="fullheigth">
+        <mat-sidenav #sidenav class="app-sidenav">
+            <!-- sidenav content -->
+        </mat-sidenav>
+        <mat-toolbar class="mat-elevation-z6 fixed-top" color="primary">
+            <button mat-icon-button (click)="sidenav.open()">
+                <mat-icon aria-label="Burger menu">view_headline</mat-icon>
+            </button>
+            <span>My App</span>
+        </mat-toolbar>
+        <app-user></app-user>
+    </mat-sidenav-container>
 </div>

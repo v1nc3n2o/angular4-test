@@ -34,7 +34,13 @@ $my-theme2-warn);
     @include angular-material-theme($my-theme2);
 }
 
+.fullheigth {
+    height: 100%;
+}
+
 body {
     margin: 0;
     font-family: Roboto, sans-serif;
+    height: 100%;
+    width: 100%;
 }
