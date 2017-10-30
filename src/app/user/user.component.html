@@ -4,7 +4,7 @@
         <button (click)="resetUsers()" mat-raised-button color="accent">Reset</button>
     </div>
     <div fxLayout fxLayoutAlign="center">
-        <mat-table #table [dataSource]="users" fxFlex="80">
+        <mat-table #table [dataSource]="users" fxFlex="80" fxShow="true" fxShow.lt-sm="false">
 
             <!-- Name -->
             <ng-container matColumnDef="name">
