@@ -15,7 +15,7 @@
 $my-theme1-primary: mat-palette($mat-teal);
 $my-theme1-accent: mat-palette($mat-yellow);
 $my-theme1-warn: mat-palette($mat-red);
-$my-theme1: mat-dark-theme( $my-theme1-primary,
+$my-theme1: mat-light-theme( $my-theme1-primary,
 $my-theme1-accent,
 $my-theme1-warn);
 // Theme two
@@ -34,13 +34,21 @@ $my-theme2-warn);
     @include angular-material-theme($my-theme2);
 }
 
-.fullheigth {
-    height: 100%;
-}
-
 body {
     margin: 0;
     font-family: Roboto, sans-serif;
+}
+
+app-root {
+    flex-direction: column;
     height: 100%;
+}
+
+html,
+body,
+mat-sidenav-container,
+.app-content {
+    margin: 0;
     width: 100%;
+    height: 100%;
 }

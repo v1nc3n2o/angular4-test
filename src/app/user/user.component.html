@@ -1,32 +1,40 @@
-<div id="user-component" fxLayout="column" fxLayoutGap="40px" class="fullheigth">
+<div id="user-component" fxLayout="column" fxLayoutGap="18px" class="fullheigth">
     <div fxLayout fxLayoutAlign="center" fxLayoutGap="2vw">
         <button (click)="getUsers()" mat-raised-button color="primary">Get Users</button>
         <button (click)="resetUsers()" mat-raised-button color="accent">Reset</button>
     </div>
     <div fxLayout fxLayoutAlign="center">
-        <mat-table #table [dataSource]="users" fxFlex="80" fxShow="true" fxShow.lt-sm="false">
+        <mat-table #table [dataSource]="users" fxFlex="80" fxShow="true" fxShow.lt-sm="false" class="mat-elevation-z6">
 
             <!-- Name -->
             <ng-container matColumnDef="name">
-                <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+                <mat-header-cell *matHeaderCellDef>
+                    <h4>Name</h4>
+                </mat-header-cell>
                 <mat-cell *matCellDef="let user"> {{user.name}} </mat-cell>
             </ng-container>
 
             <!-- City -->
             <ng-container matColumnDef="city">
-                <mat-header-cell *matHeaderCellDef> City </mat-header-cell>
+                <mat-header-cell *matHeaderCellDef>
+                    <h4>City</h4>
+                </mat-header-cell>
                 <mat-cell *matCellDef="let user">{{user.address.city}}</mat-cell>
             </ng-container>
 
             <!-- email Column -->
             <ng-container matColumnDef="email">
-                <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+                <mat-header-cell *matHeaderCellDef>
+                    <h4>Email</h4>
+                </mat-header-cell>
                 <mat-cell *matCellDef="let user">{{user.email}}</mat-cell>
             </ng-container>
 
             <!-- street Column -->
             <ng-container matColumnDef="street">
-                <mat-header-cell *matHeaderCellDef> Street </mat-header-cell>
+                <mat-header-cell *matHeaderCellDef>
+                    <h4>Street</h4>
+                </mat-header-cell>
                 <mat-cell *matCellDef="let user">{{user.address.street}}</mat-cell>
             </ng-container>
 
