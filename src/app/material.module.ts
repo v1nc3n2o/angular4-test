@@ -7,6 +7,8 @@ import {
   MatToolbarModule,
   MatMenuModule,
   MatIconModule,
+  MatInputModule,
+  MatFormFieldModule,
   MatSidenavModule,
   MatSlideToggleModule
 } from '@angular/material';
@@ -23,6 +25,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatToolbarModule,
     MatMenuModule,
     MatIconModule,
+    MatInputModule,
+    MatFormFieldModule,
     MatSidenavModule,
     MatSlideToggleModule,
     BrowserAnimationsModule,

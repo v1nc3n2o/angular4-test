@@ -35,21 +35,23 @@ $my-theme2-warn);
 }
 
 
-
 body {
-    margin: 0;
     font-family: Roboto, sans-serif;
 }
 
 app-root {
     flex-direction: column;
-    height: 100%;
+}
+
+ app-dashboard {
+    flex-direction: column;
 }
 
 html,
 body,
 mat-sidenav-container,
 app-root,
+app-dashboard,
 .app-content {
     margin: 0;
     width: 100%;

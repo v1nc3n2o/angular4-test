@@ -1,0 +1,21 @@
+<div fxLayout="row" class="fullheigth">
+  <div fxLayout="column">
+    <img src="http://a.mytrend.it/prp/2011/12/371712/o.79379.jpg" class="dimension">
+  </div>
+  <div fxLayout="column" class="padding">
+    <mat-form-field>
+      <input matInput="" maxlength="20" name="userName" placeholder="UserName" required="" />
+      <mat-error>This field is required</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Password" [(ngModel)]="password" name="password" [type]="hide ? 'password' : 'text'" required
+        maxlength="20">
+      <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+      <mat-error>This field is required</mat-error>
+    </mat-form-field>
+    <div fxLayoutAlign="center" class="padding">
+      <button mat-raised-button="" color="primary" routerLink="/dashboard" routerLinkActive="active">Login</button>
+      <button mat-raised-button="" routerLink="/user-registration" routerLinkActive="active">Sign in</button>
+    </div>
+  </div>
+</div>
