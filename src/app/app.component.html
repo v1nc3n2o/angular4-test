@@ -1,34 +1,36 @@
-<header id="header" class="mat-elevation-z6">
+<div id="appcontainer" class="app-content" fxLayout="column" [class]="theme">
+  <header id="header" class="mat-elevation-z6">
     <mat-toolbar color="primary">
-        <div fxLayout="row" fxFlex fxLayoutAlign="space-between">
-            <button mat-icon-button (click)="sidenav.open()">
-                  <mat-icon aria-label="Burger menu">view_headline</mat-icon>
-            </button>
-            <span>My App</span>
-            <mat-slide-toggle [checked]="checked" class="slide-toggle-position" (change)="changeTheme()"></mat-slide-toggle>
-        </div>
+      <div fxLayout="row" fxFlex fxLayoutAlign="space-between">
+        <button mat-icon-button (click)="sidenav.open()">
+          <mat-icon aria-label="Burger menu">view_headline</mat-icon>
+        </button>
+        <span>My App</span>
+        <mat-slide-toggle [checked]="checked" class="slide-toggle-position" (change)="changeTheme()"></mat-slide-toggle>
+      </div>
     </mat-toolbar>
-</header>
+  </header>
 
-<mat-sidenav-container fxFlex>
+  <mat-sidenav-container fxFlex>
     <mat-sidenav mode="push" #sidenav class="app-sidenav">
-        <ul>
-            <li>
-                <h3>Test</h3>
-            </li>
-            <li>
-                <h3>Test</h3>
-            </li>
-            <li>
-                <h3>Test</h3>
-            </li>
-        </ul>
+      <ul>
+        <li>
+          <h3>Test</h3>
+        </li>
+        <li>
+          <h3>Test</h3>
+        </li>
+        <li>
+          <h3>Test</h3>
+        </li>
+      </ul>
     </mat-sidenav>
 
     <!-- <div  style="background-color: yellow;"> -->
-        <app-user class="app-content" fxFlex ></app-user>
+    <app-user class="app-content" fxFlex></app-user>
     <!-- </div> -->
-</mat-sidenav-container>
-<footer>
+  </mat-sidenav-container>
+  <footer>
     <mat-toolbar color="primary"></mat-toolbar>
-</footer>
+  </footer>
+</div>
