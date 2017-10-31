@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
 
   public ngOnInit(): void {
     this.theme = 'my-theme-two';
+    $('app-root').addClass(this.theme);
     this.checked = true;
 
     // Observable.interval(1000 * 30).subscribe(period => {
@@ -22,6 +23,8 @@ export class AppComponent implements OnInit {
 
   changeTheme(num?: number) {
     // num % 2 === 0 ? this.theme = 'my-theme-two' : this.theme = 'my-theme-one';
+    $('app-root').removeClass(this.theme);
     this.theme === 'my-theme-one' ? this.theme = 'my-theme-two' : this.theme = 'my-theme-one';
+    $('app-root').addClass(this.theme);
   }
 }

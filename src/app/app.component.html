@@ -1,4 +1,4 @@
-<header [class]="theme">
+<header id="header" class="mat-elevation-z6">
     <mat-toolbar color="primary">
         <div fxLayout="row" fxFlex fxLayoutAlign="space-between">
             <button mat-icon-button (click)="sidenav.open()">
@@ -10,8 +10,8 @@
     </mat-toolbar>
 </header>
 
-<mat-sidenav-container fxFlex [class]="theme">
-    <mat-sidenav #sidenav class="app-sidenav">
+<mat-sidenav-container fxFlex>
+    <mat-sidenav mode="push" #sidenav class="app-sidenav">
         <ul>
             <li>
                 <h3>Test</h3>
@@ -25,10 +25,10 @@
         </ul>
     </mat-sidenav>
 
-    <div class="app-content">
-        <app-user fxFlex></app-user>
-    </div>
+    <!-- <div  style="background-color: yellow;"> -->
+        <app-user class="app-content" fxFlex ></app-user>
+    <!-- </div> -->
 </mat-sidenav-container>
-<footer [class]="theme">
+<footer>
     <mat-toolbar color="primary"></mat-toolbar>
 </footer>
