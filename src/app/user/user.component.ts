@@ -42,7 +42,7 @@ export class UserComponent implements OnInit {
 
 export class UserDataSource extends DataSource<User> {
 
-  constructor(public users: User[]) {
+  constructor(private users: User[]) {
     super();
   }
 
