@@ -11,25 +11,32 @@ import { DataSource } from '@angular/cdk/collections';
 })
 export class UserComponent implements OnInit {
 
-  private users: UserDataSource;
+  private dataSource: UserDataSource;
   private displayedColumns: string[];
 
   constructor(private userService: UserService) { }
 
   ngOnInit() {
-    this.displayedColumns = ['name', 'email', 'city', 'street'];
+    this.displayedColumns = ['name', 'email', 'city', 'street', 'delete'];
   }
 
   getUsers() {
     this.userService.getUsers().subscribe(
-      (result) => this.users = new UserDataSource(result),
+      (result) => this.dataSource = new UserDataSource(result),
       (error) => console.log(error)
     );
   }
 
-  resetUsers() {
-    this.users = undefined;
+  deleteUser(i) {
+    this.dataSource.getUsers().splice(i,1);
+    const copiedData = this.dataSource.getUsers();
+    this.dataSource = new UserDataSource(copiedData);
   }
+
+  resetUsers() {
+    this.dataSource = undefined;
+  }
+
 }
 
 
@@ -37,6 +44,10 @@ export class UserDataSource extends DataSource<User> {
 
   constructor(private users: User[]) {
     super();
+  }
+
+  getUsers(): User[] {
+    return this.users;
   }
 
   /** Connect function called by the table to retrieve one stream containing the data to render. */

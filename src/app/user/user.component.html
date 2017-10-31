@@ -4,7 +4,7 @@
         <button (click)="resetUsers()" mat-raised-button color="accent">Reset</button>
     </div>
     <div fxLayout fxLayoutAlign="center">
-        <mat-table #table [dataSource]="users" fxFlex="80" fxShow="true" fxShow.lt-sm="false" class="mat-elevation-z6">
+        <mat-table #table [dataSource]="dataSource" fxFlex="80" fxShow="true" fxShow.lt-sm="false" class="mat-elevation-z6">
 
             <!-- Name -->
             <ng-container matColumnDef="name">
@@ -38,8 +38,20 @@
                 <mat-cell *matCellDef="let user">{{user.address.street}}</mat-cell>
             </ng-container>
 
+            <!-- delete icon Column -->
+            <ng-container matColumnDef="delete">
+              <mat-header-cell *matHeaderCellDef>
+                  <h4>Action</h4>
+              </mat-header-cell>
+              <mat-cell *matCellDef="let user; let i = index">
+                <button mat-icon-button (click)="deleteUser(i)">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </mat-cell>
+          </ng-container>
+
             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-            <mat-row *matRowDef="let user; columns: displayedColumns;"></mat-row>
+            <mat-row *matRowDef="let user; columns: displayedColumns"></mat-row>
         </mat-table>
     </div>
 </div>
