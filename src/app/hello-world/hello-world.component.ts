@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 
 @Component({
-  selector: 'side-menu',
-  templateUrl: './side-menu.component.html'
+  selector: 'hello-world',
+  templateUrl: './hello-world.component.html'
 })
 export class HelloWorld implements OnInit {
 

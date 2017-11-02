@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 // Components
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
-import { HelloWorld } from './side-menu/side-menu.component';
+import { HelloWorld } from './hello-world/hello-world.component';
 
 // Services
 import { UserService } from './user/user.service';
