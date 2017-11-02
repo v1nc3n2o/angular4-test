@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 // Components
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
+import { HelloWorld } from './side-menu/side-menu.component';
 
 // Services
 import { UserService } from './user/user.service';
@@ -12,15 +13,25 @@ import { UserService } from './user/user.service';
 // Theme
 import { MaterialModule } from './material.module';
 
+// Router
+import { RouterModule }   from '@angular/router';
+
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent
+    UserComponent,
+    HelloWorld
   ],
   imports: [
     BrowserModule,
     HttpModule,
-    MaterialModule
+    MaterialModule,
+    RouterModule.forRoot([
+      {
+        path: 'helloWorld',
+        component: HelloWorld
+      }
+    ])
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
