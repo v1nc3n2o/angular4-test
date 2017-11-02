@@ -1,42 +1,39 @@
-<div class="app-content"
-     fxLayout="column"
-     id="appcontainer">
-  <header class="mat-elevation-z6"
-          id="header">
+<div id="appcontainer" class="app-content" fxFlex fxLayout="column" [class]="theme">
+  <header id="header" class="mat-elevation-z6">
     <mat-toolbar color="primary">
-      <div fxFlex=""
-           fxLayout="row"
-           fxLayoutAlign="space-between">
-        <button mat-icon-button="">
+      <div fxLayout="row" fxFlex fxLayoutAlign="space-between">
+        <button mat-icon-button (click)="sidenav.open()">
           <mat-icon aria-label="Burger menu">view_headline</mat-icon>
         </button>
         <span>My App</span>
-        <mat-slide-toggle class="slide-toggle-position"></mat-slide-toggle>
+        <mat-slide-toggle [checked]="checked" class="slide-toggle-position" (change)="changeTheme()"></mat-slide-toggle>
       </div>
     </mat-toolbar>
   </header>
-  <mat-sidenav-container fxFlex="">
-    <mat-sidenav class="app-sidenav"
-                 mode="push">
+
+  <mat-sidenav-container fxFlex>
+    <mat-sidenav mode="push" #sidenav class="app-sidenav">
       <ul>
         <li>
-          <h3>Test</h3>
+          <h3 routerLink="/home">
+            Home
+          </h3>
         </li>
         <li>
-          <h3>Test</h3>
+          <h3 routerLink="/helloWorld">
+            Hello
+          </h3>
         </li>
         <li>
           <h3>Test</h3>
         </li>
       </ul>
     </mat-sidenav>
+
     <!-- <div  style="background-color: yellow;"> -->
-    <app-user class="app-content"
-              fxFlex=""></app-user>
+  <router-outlet></router-outlet>
     <!-- </div> -->
   </mat-sidenav-container>
-  <!--   <a routerLink="/helloWorld">Hello</a>
-  <router-outlet></router-outlet> -->
   <footer>
     <mat-toolbar color="primary"></mat-toolbar>
   </footer>

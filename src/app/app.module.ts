@@ -14,7 +14,7 @@ import { UserService } from './user/user.service';
 import { MaterialModule } from './material.module';
 
 // Router
-import { RouterModule }   from '@angular/router';
+import { routing }from './app.routing';
 
 @NgModule({
   declarations: [
@@ -26,12 +26,7 @@ import { RouterModule }   from '@angular/router';
     BrowserModule,
     HttpModule,
     MaterialModule,
-    RouterModule.forRoot([
-      {
-        path: 'helloWorld',
-        component: HelloWorld
-      }
-    ])
+    routing
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
