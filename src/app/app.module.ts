@@ -4,7 +4,7 @@ import { HttpModule } from '@angular/http';
 
 // Components
 import { AppComponent } from './app.component';
-import { UserComponent } from './user/user.component';
+import { ConfirmDeleteDialog, UserComponent } from './user/user.component';
 
 // Services
 import { UserService } from './user/user.service';
@@ -15,7 +15,8 @@ import { MaterialModule } from './material.module';
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent
+    UserComponent,
+    ConfirmDeleteDialog
   ],
   imports: [
     BrowserModule,
@@ -23,6 +24,7 @@ import { MaterialModule } from './material.module';
     MaterialModule
   ],
   providers: [UserService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ConfirmDeleteDialog]
 })
 export class AppModule { }

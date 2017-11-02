@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { User } from './user.model';
 import { UserService } from './user.service';
 import { Observable } from 'rxjs';
 import { DataSource } from '@angular/cdk/collections';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
   selector: 'app-user',
@@ -14,7 +15,7 @@ export class UserComponent implements OnInit {
   private dataSource: UserDataSource;
   private displayedColumns: string[];
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, public dialog: MatDialog) { }
 
   ngOnInit() {
     this.displayedColumns = ['name', 'email', 'city', 'street', 'delete'];
@@ -27,6 +28,18 @@ export class UserComponent implements OnInit {
     );
   }
 
+  openDialog(i): void {
+    let dialogRef = this.dialog.open(ConfirmDeleteDialog, {
+      width: '250px'// ,
+      // data: { name: this.name, animal: this.animal }
+    });
+
+    dialogRef.afterClosed().subscribe(response => {
+      if (response)
+        this.deleteUser(i);
+    });
+  }
+
   deleteUser(i) {
     this.dataSource.getUsers().splice(i,1);
     const copiedData = this.dataSource.getUsers();
@@ -35,6 +48,22 @@ export class UserComponent implements OnInit {
 
   resetUsers() {
     this.dataSource = undefined;
+  }
+
+}
+
+@Component({
+  selector: 'confirm-delete-dialog',
+  templateUrl: 'confirm-delete-dialog.html',
+})
+export class ConfirmDeleteDialog {
+
+  constructor(
+    public dialogRef: MatDialogRef<ConfirmDeleteDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: any) { }
+
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 
 }
