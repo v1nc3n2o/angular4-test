@@ -62,12 +62,7 @@ export class ConfirmDeleteDialog {
     public dialogRef: MatDialogRef<ConfirmDeleteDialog>,
     @Inject(MAT_DIALOG_DATA) public data: any) { }
 
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
-
 }
-
 
 export class UserDataSource extends DataSource<User> {
 
