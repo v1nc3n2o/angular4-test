@@ -12,7 +12,7 @@
       <img width="250px" heigth="250px" src="https://www.sparklabs.com/forum/styles/comboot/theme/images/default_avatar.jpg">
     </div>
     <div fxLayout="column" class="padding">
-      <div fxLayout="row">
+      <div fxLayout="row" fxLayout.lt-sm="column">
         <mat-form-field>
           <input matInput placeholder="First Name" [(ngModel)]="firstName" name="firstName" required maxlength="20">
           <mat-error>This field is required</mat-error>

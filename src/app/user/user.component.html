@@ -32,18 +32,21 @@
 
             <!-- street Column -->
             <ng-container matColumnDef="street">
-                <mat-header-cell fxFlex="35" *matHeaderCellDef>
+                <mat-header-cell fxFlex="30" *matHeaderCellDef>
                     <h4>Street</h4>
                 </mat-header-cell>
-                <mat-cell fxFlex="35" *matCellDef="let user">{{user.address.street}}</mat-cell>
+                <mat-cell fxFlex="30" *matCellDef="let user">{{user.address.street}}</mat-cell>
             </ng-container>
 
             <!-- delete icon Column -->
-            <ng-container matColumnDef="delete">
-              <mat-header-cell fxFlex="5" *matHeaderCellDef>
-                  <h4>Action</h4>
+            <ng-container matColumnDef="actions">
+              <mat-header-cell fxLayoutAlign="center" fxFlex="10" *matHeaderCellDef>
+                  <h4>Actions</h4>
               </mat-header-cell>
-              <mat-cell fxFlex="5" *matCellDef="let user; let i = index">
+              <mat-cell fxLayout="row" fxFlex="10" fxLayoutAlign="center" *matCellDef="let user; let i = index">
+                <button mat-icon-button (click)="viewUserDetails(user)">
+                  <mat-icon>dvr</mat-icon>
+                </button>
                 <button mat-icon-button (click)="openDialog(i)">
                   <mat-icon>delete</mat-icon>
                 </button>
@@ -51,7 +54,7 @@
             </ng-container>
 
             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-            <mat-row *matRowDef="let user; columns: displayedColumns;"></mat-row>
+            <mat-row *matRowDef="let user; columns: displayedColumns;" ></mat-row>
         </mat-table>
     </div>
 </div>
