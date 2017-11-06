@@ -15,47 +15,58 @@
 $my-theme1-primary: mat-palette($mat-teal);
 $my-theme1-accent: mat-palette($mat-yellow);
 $my-theme1-warn: mat-palette($mat-red);
-$my-theme1: mat-dark-theme( $my-theme1-primary,
-$my-theme1-accent,
-$my-theme1-warn);
+$my-theme1: mat-dark-theme( $my-theme1-primary, $my-theme1-accent, $my-theme1-warn);
 // Theme two
 $my-theme2-primary: mat-palette($mat-indigo);
 $my-theme2-accent: mat-palette($mat-pink);
 $my-theme2-warn: mat-palette($mat-red);
-$my-theme2: mat-light-theme( $my-theme2-primary,
-$my-theme2-accent,
-$my-theme2-warn);
+$my-theme2: mat-light-theme( $my-theme2-primary, $my-theme2-accent, $my-theme2-warn);
 //----
 .my-theme-one {
-    @include angular-material-theme($my-theme1);
+  @include angular-material-theme($my-theme1);
 }
 
 .my-theme-two {
-    @include angular-material-theme($my-theme2);
+  @include angular-material-theme($my-theme2);
 }
 
-
-
 body {
-    margin: 0;
-    font-family: Roboto, sans-serif;
+  font-family: Roboto, sans-serif;
 }
 
 app-root {
-    flex-direction: column;
-    height: 100%;
+  flex-direction: column;
+}
+
+app-dashboard {
+  flex-direction: column;
 }
 
 html,
 body,
 mat-sidenav-container,
 app-root,
+app-dashboard,
 .app-content {
-    margin: 0;
-    width: 100%;
-    height: 100%;
+  margin: 0;
+  width: 100%;
+  height: 100%;
 }
 
-#header{
+#header {
   z-index: 999;
+}
+
+.dimension {
+  margin: 0;
+  width: 50%;
+  height: 50%;
+}
+
+.padding {
+  padding: 20px;
+}
+
+.center-text {
+  text-align: center;
 }
