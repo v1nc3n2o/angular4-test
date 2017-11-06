@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
     this.containerElement.classList.add(this.theme);
   }
 
-  changeTheme(num?: number) {
+  changeTheme() {
     this.containerElement.classList.remove(this.theme);
     this.theme === 'my-theme-one' ? this.theme = 'my-theme-two' : this.theme = 'my-theme-one';
     this.containerElement.classList.add(this.theme);
