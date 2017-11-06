@@ -10,25 +10,21 @@ import { OverlayContainer } from '@angular/cdk/overlay';
 export class AppComponent implements OnInit {
   theme: string;
   checked: boolean;
-  overlayContainer: any;
+  containerElement: Element;
 
-  constructor(overlayContainer: OverlayContainer) {
-    this.overlayContainer = overlayContainer.getContainerElement();
-  }
+
+  constructor(private overlayContainer: OverlayContainer) { }
 
   public ngOnInit(): void {
     this.theme = 'my-theme-two';
     this.checked = true;
-    this.overlayContainer && this.overlayContainer.classList.add(this.theme);
-    // Observable.interval(1000 * 30).subscribe(period => {
-    //   this.changeTheme(period);
-    // });
+    this.containerElement = this.overlayContainer.getContainerElement();
+    this.containerElement.classList.add(this.theme);
   }
 
   changeTheme(num?: number) {
-    // num % 2 === 0 ? this.theme = 'my-theme-two' : this.theme = 'my-theme-one';
-    this.overlayContainer && this.overlayContainer.classList.remove(this.theme);
+    this.containerElement.classList.remove(this.theme);
     this.theme === 'my-theme-one' ? this.theme = 'my-theme-two' : this.theme = 'my-theme-one';
-    this.overlayContainer && this.overlayContainer.classList.add(this.theme);
+    this.containerElement.classList.add(this.theme);
   }
 }
