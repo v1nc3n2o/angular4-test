@@ -8,50 +8,50 @@
 
             <!-- Name -->
             <ng-container matColumnDef="name">
-                <mat-header-cell *matHeaderCellDef>
+                <mat-header-cell fxFlex="20" *matHeaderCellDef>
                     <h4>Name</h4>
                 </mat-header-cell>
-                <mat-cell *matCellDef="let user"> {{user.name}} </mat-cell>
+                <mat-cell fxFlex="20" *matCellDef="let user"> {{user.name}} </mat-cell>
             </ng-container>
 
             <!-- City -->
             <ng-container matColumnDef="city">
-                <mat-header-cell *matHeaderCellDef>
+                <mat-header-cell fxFlex="20" *matHeaderCellDef>
                     <h4>City</h4>
                 </mat-header-cell>
-                <mat-cell *matCellDef="let user">{{user.address.city}}</mat-cell>
+                <mat-cell fxFlex="20" *matCellDef="let user">{{user.address.city}}</mat-cell>
             </ng-container>
 
             <!-- email Column -->
             <ng-container matColumnDef="email">
-                <mat-header-cell *matHeaderCellDef>
+                <mat-header-cell fxFlex="20" *matHeaderCellDef>
                     <h4>Email</h4>
                 </mat-header-cell>
-                <mat-cell *matCellDef="let user">{{user.email}}</mat-cell>
+                <mat-cell fxFlex="20" *matCellDef="let user">{{user.email}}</mat-cell>
             </ng-container>
 
             <!-- street Column -->
             <ng-container matColumnDef="street">
-                <mat-header-cell *matHeaderCellDef>
+                <mat-header-cell fxFlex="35" *matHeaderCellDef>
                     <h4>Street</h4>
                 </mat-header-cell>
-                <mat-cell *matCellDef="let user">{{user.address.street}}</mat-cell>
+                <mat-cell fxFlex="35" *matCellDef="let user">{{user.address.street}}</mat-cell>
             </ng-container>
 
             <!-- delete icon Column -->
             <ng-container matColumnDef="delete">
-              <mat-header-cell *matHeaderCellDef>
+              <mat-header-cell fxFlex="5" *matHeaderCellDef>
                   <h4>Action</h4>
               </mat-header-cell>
-              <mat-cell *matCellDef="let user; let i = index">
-                <button mat-icon-button (click)="deleteUser(i)">
+              <mat-cell fxFlex="5" *matCellDef="let user; let i = index">
+                <button mat-icon-button (click)="openDialog(i)">
                   <mat-icon>delete</mat-icon>
                 </button>
               </mat-cell>
-          </ng-container>
+            </ng-container>
 
             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-            <mat-row *matRowDef="let user; columns: displayedColumns"></mat-row>
+            <mat-row *matRowDef="let user; columns: displayedColumns;"></mat-row>
         </mat-table>
     </div>
 </div>

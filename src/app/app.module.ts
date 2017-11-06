@@ -8,8 +8,8 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
-import { UserComponent } from './user/user.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
+import { ConfirmDeleteDialogComponent, UserComponent } from './user/user.component';
 
 // Services
 import { UserService } from './user/user.service';
@@ -23,7 +23,8 @@ import { MaterialModule } from './material.module';
     UserComponent,
     LoginComponent,
     DashboardComponent,
-    UserRegistrationComponent
+    UserRegistrationComponent,
+    ConfirmDeleteDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +34,7 @@ import { MaterialModule } from './material.module';
     FormsModule
   ],
   providers: [UserService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ConfirmDeleteDialogComponent]
 })
 export class AppModule { }

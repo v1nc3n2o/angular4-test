@@ -11,7 +11,8 @@ import {
   MatFormFieldModule,
   MatSelectModule,
   MatSidenavModule,
-  MatSlideToggleModule
+  MatSlideToggleModule,
+  MatDialogModule
 } from '@angular/material';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -31,6 +32,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatSelectModule,
     MatSidenavModule,
     MatSlideToggleModule,
+    MatDialogModule,
     BrowserAnimationsModule,
     FlexLayoutModule]
 })
