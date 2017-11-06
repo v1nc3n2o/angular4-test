@@ -44,14 +44,14 @@
                   <h4>Action</h4>
               </mat-header-cell>
               <mat-cell fxFlex="5" *matCellDef="let user; let i = index">
-                <button mat-icon-button (click)="deleteUser(i)">
+                <button mat-icon-button (click)="openDialog(i)">
                   <mat-icon>delete</mat-icon>
                 </button>
               </mat-cell>
             </ng-container>
 
             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-            <mat-row *matRowDef="let user; columns: displayedColumns"></mat-row>
+            <mat-row *matRowDef="let user; columns: displayedColumns;"></mat-row>
         </mat-table>
     </div>
 </div>
