@@ -14,11 +14,10 @@ export class UserComponent implements OnInit {
 
   private dataSource: UserDataSource;
   private displayedColumns: string[];
-
   constructor(private userService: UserService, public dialog: MatDialog) { }
 
   ngOnInit() {
-    this.displayedColumns = ['name', 'email', 'city', 'street', 'delete'];
+    this.displayedColumns = ['name', 'email', 'city', 'street', 'actions'];
   }
 
   getUsers() {
@@ -29,19 +28,20 @@ export class UserComponent implements OnInit {
   }
 
   openDialog(i): void {
-    let dialogRef = this.dialog.open(ConfirmDeleteDialogComponent, {
+    const dialogRef = this.dialog.open(ConfirmDeleteDialogComponent, {
       width: '250px'// ,
       // data: { name: this.name, animal: this.animal }
     });
 
     dialogRef.afterClosed().subscribe(response => {
-      if (response)
+      if (response) {
         this.deleteUser(i);
+      }
     });
   }
 
   deleteUser(i) {
-    this.dataSource.getUsers().splice(i,1);
+    this.dataSource.getUsers().splice(i, 1);
     const copiedData = this.dataSource.getUsers();
     this.dataSource = new UserDataSource(copiedData);
   }
@@ -50,6 +50,9 @@ export class UserComponent implements OnInit {
     this.dataSource = undefined;
   }
 
+  viewUserDetails(user) {
+    user;
+  }
 }
 
 @Component({
