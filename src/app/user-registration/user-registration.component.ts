@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UserRegistration } from './user-registration.model';
+import { UserRegistration, State } from './user-registration.model';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-user-registration',
@@ -8,15 +9,23 @@ import { UserRegistration } from './user-registration.model';
 })
 export class UserRegistrationComponent implements OnInit {
   user: UserRegistration;
-  showInformation: boolean;
   lastName: string;
   firstName: string;
   email: string;
   phone: string;
+  street: string;
+  city: string;
+  zipCode: string;
+  state: any;
 
   constructor() { }
 
   ngOnInit() {
+    this.state = [
+      { code: 'ITA', name: 'Italy' },
+      { code: 'IRE', name: 'Ireland' },
+      { code: 'SPA', name: 'Spain' }
+    ];
   }
 
   deleteData(data, index) {
@@ -24,14 +33,18 @@ export class UserRegistrationComponent implements OnInit {
       firstName: '',
       lastName: '',
       email: '',
-      phone: ''
+      phone: '',
+    };
+    this.user.address = {
+      street: '',
+      zipCode: ''
     };
     this.lastName = undefined;
     this.firstName = undefined;
     this.email = undefined;
     this.phone = undefined;
-    this.showInformation = false;
-
+    this.street = undefined;
+    this.city = undefined;
+    this.zipCode = undefined;
   }
-
 }
