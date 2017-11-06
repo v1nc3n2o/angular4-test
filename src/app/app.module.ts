@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 
 // Components
 import { AppComponent } from './app.component';
+import { HelloWorld } from './hello-world/hello-world.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
@@ -17,10 +18,13 @@ import { UserService } from './user/user.service';
 // Theme
 import { MaterialModule } from './material.module';
 
+import {MatTableModule, MatSortModule} from '@angular/material';
+
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
+    HelloWorld,
     LoginComponent,
     DashboardComponent,
     UserRegistrationComponent,
@@ -31,7 +35,9 @@ import { MaterialModule } from './material.module';
     HttpModule,
     MaterialModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    MatTableModule,
+    MatSortModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent],
