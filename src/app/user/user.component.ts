@@ -29,7 +29,7 @@ export class UserComponent implements OnInit {
   }
 
   openDialog(i): void {
-    let dialogRef = this.dialog.open(ConfirmDeleteDialog, {
+    let dialogRef = this.dialog.open(ConfirmDeleteDialogComponent, {
       width: '250px'// ,
       // data: { name: this.name, animal: this.animal }
     });
@@ -56,10 +56,10 @@ export class UserComponent implements OnInit {
   selector: 'confirm-delete-dialog',
   templateUrl: 'confirm-delete-dialog.html',
 })
-export class ConfirmDeleteDialog {
+export class ConfirmDeleteDialogComponent {
 
   constructor(
-    public dialogRef: MatDialogRef<ConfirmDeleteDialog>,
+    public dialogRef: MatDialogRef<ConfirmDeleteDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) { }
 
 }
