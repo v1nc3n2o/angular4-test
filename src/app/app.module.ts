@@ -18,6 +18,8 @@ import { UserService } from './user/user.service';
 // Theme
 import { MaterialModule } from './material.module';
 
+import {MatTableModule, MatSortModule} from '@angular/material';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +35,9 @@ import { MaterialModule } from './material.module';
     HttpModule,
     MaterialModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    MatTableModule,
+    MatSortModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent],

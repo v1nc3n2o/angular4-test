@@ -4,12 +4,12 @@
         <button (click)="resetUsers()" mat-raised-button color="accent">Reset</button>
     </div>
     <div fxLayout fxLayoutAlign="center">
-        <mat-table #table [dataSource]="dataSource" fxFlex="80" fxShow="true" fxShow.lt-sm="false" class="mat-elevation-z6">
+        <mat-table #table [dataSource]="dataSource" fxFlex="80" fxShow="true" fxShow.lt-sm="false" class="mat-elevation-z6" matSort>
 
             <!-- Name -->
             <ng-container matColumnDef="name">
-                <mat-header-cell fxFlex="20" *matHeaderCellDef>
-                    <h4>Name</h4>
+                <mat-header-cell fxFlex="20" *matHeaderCellDef >
+                    <h4 mat-sort-header>Name</h4>
                 </mat-header-cell>
                 <mat-cell fxFlex="20" *matCellDef="let user"> {{user.name}} </mat-cell>
             </ng-container>
@@ -17,7 +17,7 @@
             <!-- City -->
             <ng-container matColumnDef="city">
                 <mat-header-cell fxFlex="20" *matHeaderCellDef>
-                    <h4>City</h4>
+                    <h4 mat-sort-header>City</h4>
                 </mat-header-cell>
                 <mat-cell fxFlex="20" *matCellDef="let user">{{user.address.city}}</mat-cell>
             </ng-container>
