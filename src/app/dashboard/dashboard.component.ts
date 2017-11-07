@@ -11,7 +11,7 @@ export class DashboardComponent implements OnInit {
   theme: string;
   checked: boolean;
   containerElement: Element;
-
+  condition: boolean;
 
   constructor(private overlayContainer: OverlayContainer) { }
 
@@ -20,6 +20,7 @@ export class DashboardComponent implements OnInit {
     this.checked = true;
     this.containerElement = this.overlayContainer.getContainerElement();
     this.containerElement.classList.add(this.theme);
+    this.condition = true;
   }
 
   changeTheme() {
