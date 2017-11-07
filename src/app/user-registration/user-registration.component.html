@@ -9,12 +9,11 @@
       </div>
     </mat-toolbar>
   </header>
-  <form fxFlexFill fxFlex name="information" (submit)="addData(firstName, lastName, email, phone)" fxLayoutAlign="center">
-    <!-- <div class="scroll padding"> -->
-    <div fxLayout="column" class="padding">
+  <form fxLayout.lt-sm="column" fxFlexFill fxFlex name="information" (submit)="addData(firstName, lastName, email, phone)" fxLayoutAlign="center">
+    <div fxLayout="column" class="padding" style="align-self: center;">
       <img width="250px" heigth="250px" src="https://www.sparklabs.com/forum/styles/comboot/theme/images/default_avatar.jpg">
     </div>
-    <div fxLayout="column" class="padding">
+    <div fxLayout="column" class="padding" style="align-self: center;">
       <div fxLayout="row" fxLayout.lt-sm="column">
         <mat-form-field>
           <input matInput placeholder="First Name" [(ngModel)]="firstName" name="firstName" required maxlength="20">
@@ -58,7 +57,6 @@
         <button class="margin-left" mat-raised-button [disabled]="!firstName || !lastName || !phone || !email" (click)="deleteData(user)">Clear</button>
       </div>
     </div>
-    <!-- </div> -->
   </form>
   <footer fxFlex="nogrow">
     <mat-toolbar color="primary"></mat-toolbar>
