@@ -2,9 +2,12 @@
   <header id="header" class="mat-elevation-z6">
     <mat-toolbar color="primary">
       <div fxLayout="row" fxFlex fxLayoutAlign="space-between">
-        <button mat-icon-button (click)="sidenav.open()">
+        <button mat-icon-button (click)="sidenav.open(); toggleCondition()" *ngIf="condition">
           <mat-icon aria-label="Burger menu">view_headline</mat-icon>
         </button>
+        <button mat-icon-button (click)="sidenav.close(); toggleCondition()" *ngIf="!condition">
+            <mat-icon aria-label="Burger menu">arrow_back</mat-icon>
+          </button>
         <span>My App</span>
         <mat-slide-toggle [checked]="checked" class="slide-toggle-position" (change)="changeTheme()"></mat-slide-toggle>
       </div>
@@ -31,6 +34,10 @@
     <!-- </div> -->
   </mat-sidenav-container>
   <footer>
-    <mat-toolbar color="primary"></mat-toolbar>
+    <mat-toolbar color="primary">
+        <button mat-icon-button routerLink="/login" >
+          <mat-icon aria-label="Exit">exit_to_app</mat-icon>
+        </button>
+    </mat-toolbar>
   </footer>
 </div>
