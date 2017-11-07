@@ -12,7 +12,7 @@
 @import url('~https://fonts.googleapis.com/icon?family=Material+Icons');
 @include mat-core();
 // Theme one
-$my-theme1-primary: mat-palette($mat-teal);
+$my-theme1-primary: mat-palette($mat-red);
 $my-theme1-accent: mat-palette($mat-yellow);
 $my-theme1-warn: mat-palette($mat-red);
 $my-theme1: mat-dark-theme( $my-theme1-primary, $my-theme1-accent, $my-theme1-warn);
