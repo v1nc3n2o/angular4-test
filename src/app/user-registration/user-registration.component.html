@@ -1,0 +1,66 @@
+<div class="my-theme-two" fxLayout="column" fxFlexFill>
+  <header id="header" class="mat-elevation-z6" fxFlex="nogrow">
+    <mat-toolbar color="primary">
+      <div fxLayout="row">
+        <button mat-button routerLink="/login" routerLinkActive="active" id="back-button">
+          <mat-icon>arrow_back</mat-icon>
+        </button>
+        <span>Registration</span>
+      </div>
+    </mat-toolbar>
+  </header>
+  <form fxLayout="column" fxFlexFill fxFlex name="information" (submit)="addData(firstName, lastName, email, phone)" fxLayoutAlign="center">
+    <div class="scroll">
+    <div fxLayout="column" class="padding" style="align-items: center;">
+      <img width="250px" heigth="250px" src="https://www.sparklabs.com/forum/styles/comboot/theme/images/default_avatar.jpg">
+    </div>
+    <div fxLayout="column" class="padding align-center">
+      <div fxLayout="row" fxLayout.lt-sm="column">
+        <mat-form-field>
+          <input matInput placeholder="First Name" [(ngModel)]="firstName" name="firstName" required maxlength="20">
+          <mat-error>This field is required</mat-error>
+        </mat-form-field>
+        <mat-form-field class="margin-left">
+          <input matInput placeholder="Last Name" [(ngModel)]="lastName" name="lastName" required maxlength="20">
+          <mat-error>This field is required</mat-error>
+        </mat-form-field>
+      </div>
+      <div fxLayout="row" fxLayout.xs="column">
+        <mat-form-field>
+          <input matInput placeholder="Phone Number" [(ngModel)]="phone" name="phone" required maxlength="10" pattern="[0-9]+">
+          <mat-error>This field is required</mat-error>
+        </mat-form-field>
+        <mat-form-field class="margin-left">
+          <input matInput placeholder="Email" [(ngModel)]="email" required name="email">
+          <mat-error>This field is required</mat-error>
+        </mat-form-field>
+      </div>
+      <mat-form-field>
+        <input matInput placeholder="Street" [(ngModel)]="street" name="street" maxlength="40">
+      </mat-form-field>
+      <div fxLayout="row">
+        <mat-form-field>
+          <input matInput placeholder="Zipcode" [(ngModel)]="zipCode" name="zipCode" maxlength="9">
+        </mat-form-field>
+        <mat-form-field class="margin-left">
+          <input matInput placeholder="City" [(ngModel)]="city" name="city" maxlength="10">
+        </mat-form-field>
+        <mat-form-field class="margin-left">
+          <mat-select placeholder="State">
+            <mat-option *ngFor="let state of state" [value]="state.code">
+              {{ state.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div fxLayout="row" class="align-center">
+        <button mat-raised-button color="primary" routerLink="/dashboard" routerLinkActive="active">Ok</button>
+        <button class="margin-left" mat-raised-button [disabled]="!firstName || !lastName || !phone || !email" (click)="deleteData(user)">Clear</button>
+      </div>
+    </div>
+  </div>
+  </form>
+  <footer fxFlex="nogrow">
+    <mat-toolbar color="primary"></mat-toolbar>
+  </footer>
+</div>

@@ -7,7 +7,12 @@ import {
   MatToolbarModule,
   MatMenuModule,
   MatIconModule,
-  MatSidenavModule
+  MatInputModule,
+  MatFormFieldModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSlideToggleModule,
+  MatDialogModule
 } from '@angular/material';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -22,7 +27,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatToolbarModule,
     MatMenuModule,
     MatIconModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatSelectModule,
     MatSidenavModule,
+    MatSlideToggleModule,
+    MatDialogModule,
     BrowserAnimationsModule,
     FlexLayoutModule]
 })
