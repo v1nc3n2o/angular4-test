@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
+import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 
@@ -11,6 +11,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
 import { ConfirmDeleteDialogComponent, UserComponent } from './user/user.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
 
 // Services
 import { UserService } from './user/user.service';
@@ -20,6 +21,7 @@ import { MaterialModule } from './material.module';
 
 import {MatTableModule, MatSortModule} from '@angular/material';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,11 +30,12 @@ import {MatTableModule, MatSortModule} from '@angular/material';
     LoginComponent,
     DashboardComponent,
     UserRegistrationComponent,
-    ConfirmDeleteDialogComponent
+    ConfirmDeleteDialogComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,
-    HttpModule,
+    HttpClientModule,
     MaterialModule,
     AppRoutingModule,
     FormsModule,

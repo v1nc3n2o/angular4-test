@@ -1,18 +1,27 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import 'rxjs/add/operator/map';
 import { User } from './user.model';
 import { Observable } from 'rxjs';
 
+const url = 'https://jsonplaceholder.typicode.com/users';
+
 @Injectable()
 export class UserService {
 
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
 
-  public getUsers(): Observable<User[]> {
-    const url = 'https://jsonplaceholder.typicode.com/users';
-    return this.http
-      .get(url)
-      .map(response => response.json() as User[]);
+  private _user: User;
+
+  public getUsers() {
+    return this.http.get(url);
+  }
+
+  public set setselectedUser(user: User) {
+    this._user = user;
+  }
+
+  public get getSelectedUser() {
+    return this._user;
   }
 }
