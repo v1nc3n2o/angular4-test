@@ -29,4 +29,8 @@ export class DashboardComponent implements OnInit {
     this.containerElement.classList.add(this.theme);
   }
 
+  toggleCondition() {
+    this.condition = !this.condition;
+  }
+
 }
