@@ -4,6 +4,7 @@ import { UserService } from './user.service';
 import { Observable } from 'rxjs';
 import { DataSource } from '@angular/cdk/collections';
 import { MatSort, MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -15,7 +16,7 @@ export class UserComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
   private dataSource: UserDataSource;
   private displayedColumns: string[];
-  constructor(private userService: UserService, public dialog: MatDialog) { }
+  constructor(private userService: UserService, public dialog: MatDialog, private router: Router) { }
 
   ngOnInit() {
     this.displayedColumns = ['name', 'email', 'city', 'street', 'actions'];
@@ -23,7 +24,7 @@ export class UserComponent implements OnInit {
 
   getUsers() {
     this.userService.getUsers().subscribe(
-      (result) => this.dataSource = new UserDataSource(result, this.sort),
+      (result) => this.dataSource = new UserDataSource(result as User[], this.sort),
       (error) => console.log(error)
     );
   }
@@ -31,7 +32,6 @@ export class UserComponent implements OnInit {
   openDialog(i): void {
     const dialogRef = this.dialog.open(ConfirmDeleteDialogComponent, {
       width: '250px'// ,
-      // data: { name: this.name, animal: this.animal }
     });
 
     dialogRef.afterClosed().subscribe(response => {
@@ -52,7 +52,8 @@ export class UserComponent implements OnInit {
   }
 
   viewUserDetails(user) {
-    user;
+    this.userService.setselectedUser = user;
+    this.router.navigate(['/dashboard/user-details']);
   }
 }
 
