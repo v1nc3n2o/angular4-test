@@ -1,3 +1,48 @@
-<div class="fullheigth"
-     fxLayout="column"
-     fxLayoutGap="18px">Hello World!!</div>
+<div fxLayout="row" fxLayoutGap="5px">
+  <div class="fullheigth"
+       fxLayout="column"
+       fxFlex="10"
+       fxLayoutGap="18px">Hello World!!
+       <input (keyup)="onKey($event)">
+       <p>{{values}}</p>
+  </div>
+  <div class="fullheigth"
+    fxLayout="column"
+    fxFlex="10"
+    fxLayoutGap="18px">Get user input from a template reference variable
+      <input #box (keyup)="0">
+      <p>{{box.value}}</p>
+  </div>
+  <div class="fullheigth"
+    fxLayout="column"
+    fxFlex="20"
+    fxLayoutGap="18px">Another example with reference variable
+      <input #boxTwo (keyup)="onKeyBinding(boxTwo.value)">
+      <p>{{refVarValue}}</p>
+  </div>
+  <div class="fullheigth"
+    fxLayout="column"
+    fxFlex="20"
+    fxLayoutGap="18px"> example On enter down only
+      <input #boxEnter (keyup.enter)="0">
+      <p>{{boxEnter.value}}</p>
+  </div>
+  <div class="fullheigth"
+    fxLayout="column"
+    fxFlex="40"
+    fxLayoutGap="18px"> example On enter down with ngFor
+    <input #boxList (keyup.enter)="onKeyList(boxList.value); boxList.value =''">
+    <ul><li *ngFor="let element of valueArray">{{element}}</li></ul>
+  </div>
+</div>
+
+<input id="nameId" name="nameName" class="form-control" required minlength="4"
+  [(ngModel)]="nameModel" #name="ngModel" appEmailValidator>
+
+<div *ngIf="name.invalid && name.touched" class="alert alert-danger">
+
+  <div *ngIf="name.errors.required ">Name is required.</div>
+  <div *ngIf="name.errors.minlength">Name must be at least 4 characters long</div>
+  <div *ngIf="name.errors.emailDomain" > Please insert a valid Email</div>
+
+</div>

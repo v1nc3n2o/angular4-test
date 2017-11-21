@@ -17,9 +17,10 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import { UserService } from './user/user.service';
 
 // Theme
-import { MaterialModule } from './material.module';
+import { MaterialModule } from './module/material.module';
 
 import {MatTableModule, MatSortModule} from '@angular/material';
+import { EmailValidatorDirective } from './validator/email-validator.directive';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import {MatTableModule, MatSortModule} from '@angular/material';
     DashboardComponent,
     UserRegistrationComponent,
     ConfirmDeleteDialogComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    EmailValidatorDirective
   ],
   imports: [
     BrowserModule,
