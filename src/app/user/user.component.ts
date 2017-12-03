@@ -53,7 +53,7 @@ export class UserComponent implements OnInit {
 
   viewUserDetails(user) {
     this.userService.setselectedUser = user;
-    this.router.navigate(['/dashboard/user-details']);
+    this.router.navigate(['user-details']);
   }
 }
 

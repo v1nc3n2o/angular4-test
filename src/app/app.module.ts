@@ -6,10 +6,6 @@ import { FormsModule } from '@angular/forms';
 
 // Components
 import { AppComponent } from './app.component';
-import { HelloWorld } from './hello-world/hello-world.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { LoginComponent } from './login/login.component';
-import { UserRegistrationComponent } from './user-registration/user-registration.component';
 import { ConfirmDeleteDialogComponent, UserComponent } from './user/user.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 
@@ -26,10 +22,6 @@ import {MatTableModule, MatSortModule} from '@angular/material';
   declarations: [
     AppComponent,
     UserComponent,
-    HelloWorld,
-    LoginComponent,
-    DashboardComponent,
-    UserRegistrationComponent,
     ConfirmDeleteDialogComponent,
     UserDetailsComponent
   ],
